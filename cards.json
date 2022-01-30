@@ -1,0 +1,9 @@
+{
+    "cards" : [
+        {
+            "suit" : "moon",
+            "value" : 0,
+            "status" : "in deck"
+        }
+    ]
+}
