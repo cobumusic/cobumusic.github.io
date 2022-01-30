@@ -3,7 +3,17 @@
         {
             "suit" : "moon",
             "value" : 0,
-            "status" : "in deck"
+            "position" : "in deck"
+        }, 
+        {
+            "suit" : "moon",
+            "value" : 1,
+            "position" : "in deck"
+        }, 
+        {
+            "suit" : "moon",
+            "value" : 2,
+            "position" : "in deck"
         }
     ]
 }
