@@ -28,10 +28,15 @@
             <p class="flexItem">&#9790;</p>
             <h1 class="flexItem">Hello World!</h1>
         </div>
+        <script data-main="/app" src="scripts/require.js"></script>
         <script>
             //import * as data from "./cards.json";
             //const word = data.name;
            
+            const jsonData = require('./cards.json'); 
+            console.log(jsonData);
+
+            /*
             var cardData;
             fetch("./cards.json")
             .then(response => {
@@ -40,7 +45,7 @@
             .then(data => cardData = data);
             console.log(cardData);
             //.then(data => console.log(data));
-            
+            */
 
             /*
             var path = "./cards.json";
