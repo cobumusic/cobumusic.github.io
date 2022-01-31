@@ -30,15 +30,36 @@
             <h1 class="flexItem">Hello World!</h1>
         </div>
         <script>
-            console.log("abcd");
             const cards = [];
             const suits = ["circle", "triangle", "circle", "moon", "star"];
-            for(let shape = 0; shape <= 4; shape++){
-                for(let val = 0; val <= 10; val++){
-                    const card = {suit:suits[shape], value:val, status:"in deck"};
-                    cards.push(card);
+
+            function initializeCards(){
+                for(let shape = 0; shape <= 4; shape++){
+                    for(let val = 0; val <= 10; val++){
+                        const card = {suit:suits[shape], value:val, status:"in deck"};
+                        cards.push(card);
+                    }
                 }
             }
+
+            function shuffle(array){
+                let currentIndex = array.length,  randomIndex;
+                // While there remain elements to shuffle...
+                while (currentIndex != 0) {
+                    // Pick a remaining element...
+                    randomIndex = Math.floor(Math.random() * currentIndex);
+                    currentIndex--;
+
+                    // And swap it with the current element.
+                    [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
+                }
+
+                return array;
+            }
+
+            initializeCards();
+            shuffle(cards);
+            console.log("bcd");
             console.log(cards);
         </script>
     </body>
