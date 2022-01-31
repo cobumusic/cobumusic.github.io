@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+        <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500&amp;display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+        <title>Queue Cards</title>
+    </head>
+    <style>
+    body {
+        font-family:'Roboto', sans-serif;
+        background-color: white;
+    }
+
+    .flexContainer{
+        display:flex;
+        flex-direction: row;
+        background-color:blue;
+    }
+
+    .flexItem{
+        color:greenyellow;
+    }
+    </style>
+    <body>
+        <h1>Hello World!</h1>
+        <div class="flexContainer">
+            <p class="flexItem">&#9790;</p>
+            <h1 class="flexItem">Hello World!</h1>
+        </div>
+        <script type="module" src="./require.js"></script>
+        <script>
+            //import * as data from "./cards.json";
+            //const word = data.name;
+           
+            console.log("abcd");
+
+            /*
+            var cardData;
+            fetch("./cards.json")
+            .then(response => {
+                return response.json();
+            })
+            .then(data => cardData = data);
+            console.log(cardData);
+            //.then(data => console.log(data));
+            */
+
+            /*
+            var path = "./cards.json";
+            var readJson = (path, cb) => {
+                fs.readFile(require.resolve(path), (err, data) => {
+                    if (err)
+                        cb(err)
+                    else
+                        cb(null, JSON.parse(data))
+                })
+            }
+            */
+
+            //const data = require("./cards.json");
+            //console.log(data);
+        </script>
+    </body>
+</html>
