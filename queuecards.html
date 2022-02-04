@@ -88,19 +88,29 @@
                 //deal out deck
                 for(let i = 0; i < 7; i++){
                     queue.push(deck.pop());
+                    //TODO change statuses
                 }
 
                 //deal out the hand
-                for(let i = 0; i < 7; i++){
+                for(let i = 0; i < 5; i++){
                     playerHand.push(deck.pop());
+                    //TODO change statuses
                 }
 
                 updateBoard();
             }
 
             function updateBoard(){
-                deckDiv.innerHTML = deck;
-                queueDiv.innerHTML = queue;
+                //deckDiv.innerHTML = deck;
+                deckDiv.innerHTML = deck.length + " cards in deck";
+                
+                var qToDisplay = "";
+                for(let i = 0; i < queue.length; i++){
+                    qToDisplay += queue[i]["value"] + " of " + queue[i]["suit"] + "s, "
+                }
+                qToDisplay = qToDisplay.slice(0, -2);
+                queueDiv.innerHTML = qToDisplay;
+
                 playerHandDiv.innerHTML = playerHand;
             }
 
