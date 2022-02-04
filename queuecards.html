@@ -86,7 +86,14 @@
                 shuffleDeck(deck);
 
                 //deal out deck
+                for(let i = 0; i < 7; i++){
+                    queue.push(deck.pop());
+                }
 
+                //deal out the hand
+                for(let i = 0; i < 7; i++){
+                    playerHand.push(deck.pop());
+                }
             }
 
             newGame();
