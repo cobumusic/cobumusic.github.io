@@ -70,10 +70,10 @@
             }
 
             function initializeDeck(){
-                for(let i = 0; i <= cards.length; i++){
+                for(let i = 0; i < cards.length; i++){
                     const toRead = cards[i];
-                    console.log(toRead);
-                    console.log(i);
+                    console.log(toRead.suit);
+                    console.log(toRead["suit"]);
                     //const card = {suit:cards[i].suit, value:cards[i].value, status:cards[i].status};
                     //deck.push(card);
                 }
