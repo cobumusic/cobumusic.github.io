@@ -35,15 +35,20 @@
         <p>Your Hand:</p>
         <div id="playerHandDiv">
         </div>
+        <p>Your Play Area:</p>
+        <div id="playerAreaDiv">
+        </div>
         <script>
             const cards = [];
-            const suits = ["circle", "triangle", "circle", "moon", "star"];
+            const suits = ["circle", "triangle", "square", "moon", "star"];
             var deckDiv = document.getElementById("deckDiv");
             var queueDiv = document.getElementById("queueDiv");
             var playerHandDiv = document.getElementById("playerHandDiv");
+            var playerAreaDiv = document.getElementById("playerAreaDiv");
             var deck = [];
             var queue = [];
             var playerHand = [];
+            var playerArea = [];
 
             function initializeCards(){
                 for(let shape = 0; shape <= 4; shape++){
@@ -72,8 +77,6 @@
             function initializeDeck(){
                 for(let i = 0; i < cards.length; i++){
                     const toRead = cards[i];
-                    //console.log(toRead.suit);
-                    //console.log(toRead["suit"]);
                     const card = {suit:toRead["suit"], value:toRead["value"], status:toRead["status"]};
                     deck.push(card);
                 }
@@ -101,23 +104,26 @@
             }
 
             function updateBoard(){
-                //deckDiv.innerHTML = deck;
+                //update deck
                 deckDiv.innerHTML = deck.length + " cards in deck";
-                
+
+                //update queue
                 var qToDisplay = "";
                 for(let i = 0; i < queue.length; i++){
                     qToDisplay += queue[i]["value"] + " of " + queue[i]["suit"] + "s, "
                 }
                 qToDisplay = qToDisplay.slice(0, -2);
                 queueDiv.innerHTML = qToDisplay;
-
+                
+                //update player hand
                 var playerHandToDisplay = "";
                 for(let i = 0; i < playerHand.length; i++){
                     playerHandToDisplay += playerHand[i]["value"] + " of " + playerHand[i]["suit"] + "s, "
                 }
                 playerHandToDisplay = playerHandToDisplay.slice(0, -2);
                 playerHandDiv.innerHTML = playerHandToDisplay;
-                //playerHandDiv.innerHTML = playerHand;
+
+                //update player area
             }
 
             newGame();
