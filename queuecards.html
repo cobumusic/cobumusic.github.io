@@ -111,7 +111,13 @@
                 qToDisplay = qToDisplay.slice(0, -2);
                 queueDiv.innerHTML = qToDisplay;
 
-                playerHandDiv.innerHTML = playerHand;
+                var playerHandToDisplay = "";
+                for(let i = 0; i < playerHand.length; i++){
+                    playerHandToDisplay += playerHand[i]["value"] + " of " + playerHand[i]["suit"] + "s, "
+                }
+                playerHandToDisplay = playerHandToDisplay.slice(0, -2);
+                playerHandDiv.innerHTML = playerHandToDisplay;
+                //playerHandDiv.innerHTML = playerHand;
             }
 
             newGame();
