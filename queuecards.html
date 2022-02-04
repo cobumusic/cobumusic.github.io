@@ -38,6 +38,10 @@
         <script>
             const cards = [];
             const suits = ["circle", "triangle", "circle", "moon", "star"];
+            var deckDiv = document.getElementById("deckDiv");
+            var queueDiv = document.getElementById("queueDiv");
+            var playerHandDiv = document.getElementById("playerHandDiv");
+            var deck;
 
             function initializeCards(){
                 for(let shape = 0; shape <= 4; shape++){
@@ -63,9 +67,21 @@
                 return array;
             }
 
+            function initializeDeck(){
+                for(let i = 0; i <= cards.length; i++){
+                    const card = {suit:cards[i].suit, value:cards[i].value, status:cards[i].status};
+                    deck.push(card);
+                }
+            }
+
             function newGame(){
+                //initialize deck
                 initializeCards();
                 shuffleDeck(cards);
+                initializeDeck();
+                
+                //deal out deck
+
             }
 
             newGame();
