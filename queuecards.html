@@ -57,8 +57,12 @@
                 return array;
             }
 
-            initializeCards();
-            shuffleDeck(cards);
+            function newGame(){
+                initializeCards();
+                shuffleDeck(cards);
+            }
+
+            newGame();
             console.log("abcd");
             console.log(cards);
         </script>
