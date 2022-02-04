@@ -41,7 +41,9 @@
             var deckDiv = document.getElementById("deckDiv");
             var queueDiv = document.getElementById("queueDiv");
             var playerHandDiv = document.getElementById("playerHandDiv");
-            var deck;
+            var deck = [];
+            var queue = [];
+            var playerHand = [];
 
             function initializeCards(){
                 for(let shape = 0; shape <= 4; shape++){
@@ -79,13 +81,13 @@
                 initializeCards();
                 shuffleDeck(cards);
                 initializeDeck();
-                
+
                 //deal out deck
 
             }
 
             newGame();
-            console.log("abcd");
+            //console.log("abcd");
             console.log(cards);
         </script>
     </body>
