@@ -94,11 +94,17 @@
                 for(let i = 0; i < 7; i++){
                     playerHand.push(deck.pop());
                 }
+
+                updateBoard();
+            }
+
+            function updateBoard(){
+                deckDiv.innerHTML = deck;
+                queueDiv.innerHTML = queue;
+                playerHandDiv.innerHTML = playerHand;
             }
 
             newGame();
-            //console.log("abcd");
-            console.log(cards);
             console.log(deck);
         </script>
     </body>
