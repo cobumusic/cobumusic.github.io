@@ -71,8 +71,10 @@
 
             function initializeDeck(){
                 for(let i = 0; i <= cards.length; i++){
-                    const card = {suit:cards[i].suit, value:cards[i].value, status:cards[i].status};
-                    deck.push(card);
+                    const toRead = cards[i];
+                    console.log(toRead);
+                    //const card = {suit:cards[i].suit, value:cards[i].value, status:cards[i].status};
+                    //deck.push(card);
                 }
             }
 
