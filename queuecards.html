@@ -72,18 +72,18 @@
             function initializeDeck(){
                 for(let i = 0; i < cards.length; i++){
                     const toRead = cards[i];
-                    console.log(toRead.suit);
-                    console.log(toRead["suit"]);
-                    //const card = {suit:cards[i].suit, value:cards[i].value, status:cards[i].status};
-                    //deck.push(card);
+                    //console.log(toRead.suit);
+                    //console.log(toRead["suit"]);
+                    const card = {suit:toRead["suit"], value:toRead["value"], status:toRead["status"]};
+                    deck.push(card);
                 }
             }
 
             function newGame(){
                 //initialize deck
-                initializeCards();
-                shuffleDeck(cards);
+                initializeCards();//the original set of cards
                 initializeDeck();
+                shuffleDeck(deck);
 
                 //deal out deck
 
@@ -92,6 +92,7 @@
             newGame();
             //console.log("abcd");
             console.log(cards);
+            console.log(deck);
         </script>
     </body>
 </html>
