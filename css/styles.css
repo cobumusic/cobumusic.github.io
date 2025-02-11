@@ -10942,12 +10942,20 @@ p {
     margin-right: 0;
   }
 }
+
+.particles-div{
+	position:absolute;
+	margin-top: -20rem;
+	height:800px;
+	width:100%;
+}
+
 header.masthead {
   padding-top: 10.5rem;
   padding-bottom: 6rem;
   text-align: center;
   color: #fff;
-  background-image: url("../assets/img/header-bg.jpg");
+  background-image: url("../assets/img/header-bg-blank.jpg");
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-position: center center;
