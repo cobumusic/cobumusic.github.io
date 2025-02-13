@@ -15,6 +15,8 @@
         <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
+		
+		<script src="js/jquery-3.7.1.min.js"></script>
     </head>
     <body id="page-top">
         <!-- Navigation-->
@@ -335,51 +337,58 @@
 		-->
 		
         <!-- Contact-->
-        <!-- <section class="page-section" id="contact"> -->
-            <!-- <div class="container"> -->
-                <!-- <div class="text-center"> -->
-                    <!-- <h2 class="section-heading text-uppercase">Contact Us</h2> -->
-                    <!-- <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3> -->
-                <!-- </div> -->
-                <!-- <form id="contactForm" data-sb-form-api-token="API_TOKEN"> -->
-                    <!-- <div class="row align-items-stretch mb-5"> -->
-                        <!-- <div class="col-md-6"> -->
-                            <!-- <div class="form-group"> -->
-                                <!-- <input class="form-control" id="name" type="text" placeholder="Your Name *" data-sb-validations="required" /> -->
-                                <!-- <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div> -->
-                            <!-- </div> -->
-                            <!-- <div class="form-group"> -->
-                                <!-- <input class="form-control" id="email" type="email" placeholder="Your Email *" data-sb-validations="required,email" /> -->
-                                <!-- <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div> -->
-                                <!-- <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div> -->
-                            <!-- </div> -->
-                            <!-- <div class="form-group mb-md-0"> -->
-                                <!-- <input class="form-control" id="phone" type="tel" placeholder="Your Phone *" data-sb-validations="required" /> -->
-                                <!-- <div class="invalid-feedback" data-sb-feedback="phone:required">A phone number is required.</div> -->
-                            <!-- </div> -->
-                        <!-- </div> -->
-                        <!-- <div class="col-md-6"> -->
-                            <!-- <div class="form-group form-group-textarea mb-md-0"> -->
-                                <!-- <textarea class="form-control" id="message" placeholder="Your Message *" data-sb-validations="required"></textarea> -->
-                                <!-- <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.</div> -->
-                            <!-- </div> -->
-                        <!-- </div> -->
-                    <!-- </div> -->
+        <section class="page-section" id="contact">
+            <div id="formContainer" class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">Contact Us</h2>
+                    <!-- <h3 class="section-subheading text-muted">and I'll respond shortly!</h3> -->
+                </div>
+				<!-- <form method="POST" action="https://script.google.com/macros/s/AKfycbybf4JjHGl9qqYmTe836pwGEYlzdCjfqp0KzUFj7rLGw-ZGRYSAnQlAPr6MOYGOTO2_Pw/exec"> -->
+				  <!-- <input name="Email" type="email" placeholder="Email" required> -->
+				  <!-- <input name="Name" type="text" placeholder="Name" required> -->
+				  <!-- <button type="submit">Send</button> -->
+				<!-- </form> -->
+                <form id="contactForm" method="POST" action="https://script.google.com/macros/s/AKfycbybf4JjHGl9qqYmTe836pwGEYlzdCjfqp0KzUFj7rLGw-ZGRYSAnQlAPr6MOYGOTO2_Pw/exec">
+                    <div class="row align-items-stretch mb-5">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input name="Name" class="form-control" id="name" type="text" placeholder="Your Name *" data-sb-validations="required" />
+                                <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
+                            </div>
+                            <div class="form-group">
+                                <input name="Email" class="form-control" id="email" type="email" placeholder="Your Email *" data-sb-validations="required,email" />
+                                <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
+                                <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
+                            </div>
+                            <div class="form-group mb-md-0">
+                                <input name="Phone" class="form-control" id="phone" type="tel" placeholder="Your Phone" data-sb-validations="required" />
+                                <div class="invalid-feedback" data-sb-feedback="phone:required">A phone number is required.</div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group form-group-textarea mb-md-0">
+                                <textarea name="Message" class="form-control" id="message" placeholder="Your Message" data-sb-validations="required"></textarea>
+                                <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.</div>
+                            </div>
+                        </div>
+                    </div>
 
-                    <!-- <div class="d-none" id="submitSuccessMessage"> -->
-                        <!-- <div class="text-center text-white mb-3"> -->
-                            <!-- <div class="fw-bolder">Form submission successful!</div> -->
-                            <!-- To activate this form, sign up at -->
-                            <!-- <br /> -->
-                            <!-- <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a> -->
-                        <!-- </div> -->
-                    <!-- </div> -->
+                    <div class="d-none" id="submitSuccessMessage">
+                        <div class="text-center text-white mb-3">
+                            <div class="fw-bolder">Form submission successful!</div>
+                        </div>
+                    </div>
 
-                    <!-- <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div> -->
+                    <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
                     <!-- <div class="text-center"><button class="btn btn-primary btn-xl text-uppercase disabled" id="submitButton" type="submit">Send Message</button></div> -->
-                <!-- </form> -->
-            <!-- </div> -->
-        <!-- </section> -->
+                    <div class="text-center"><button class="btn btn-primary btn-xl text-uppercase" id="submitButton" type="submit">Send Message</button></div>
+                </form>
+            </div>	
+			<div id="formSuccessMessage" class="text-center" style="display:none;">
+				<h2 class="section-heading text-uppercase">Information Submitted</h2>
+				<h3 class="section-subheading text-muted" style="color:#cca000 !important;font-size:2rem;">I'll be keeping in touch!</h3>
+			</div>
+        </section>
 		
 		<!-- Footer-->
         <footer class="footer py-4">
@@ -607,8 +616,9 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
-    <script src="js/particles.js-master/particles.js"></script>
-    <script src="js/particles.js-master/demo/js/app.js"></script>
+		<script src="js/formLogic.js"></script>
+		<script src="js/particles.js-master/particles.js"></script>
+		<script src="js/particles.js-master/demo/js/app.js"></script>
         <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
         <!-- * *                               SB Forms JS                               * *-->
         <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
