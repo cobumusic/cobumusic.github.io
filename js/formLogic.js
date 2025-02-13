@@ -4,7 +4,7 @@ form.addEventListener("submit", function(e) {
 		e.preventDefault();
 		const data = new FormData(form);
 		const action = e.target.action;
-		console.log("hello");
+		$("#submitLoadingGif").show();
 		fetch(action, {
 			method: 'POST',
 			body: data,
@@ -45,6 +45,17 @@ function toggleSubmitButton(isActive){
 }
 
 function formSubmitted(){
-	$("#formContainer").hide();
-	$("#formSuccessMessage").show();
+	// $("#formContainer").hide();
+	// $("#formSuccessMessage").show();
+	
+	//this was trying to get the old div height to keep it the same, but still figuring it out
+	// var currentFormHeight = document.getElementById("formContainer").offsetHeight;
+	// console.log(currentFormHeight);
+	
+	
+	$("#contactHeading").html("Information Submitted");
+	$("#contactForm").slideUp();
+	// $("#formContainer").slideUp();
+	$("#formSuccessMessage").slideDown();
+	// $("#formSuccessMessage").show();
 }

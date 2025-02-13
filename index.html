@@ -32,7 +32,7 @@
                         <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
                         <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
                         <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
-                        <!-- <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li> -->
+                        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
                     </ul>
                 </div>
             </div>
@@ -338,9 +338,10 @@
 		
         <!-- Contact-->
         <section class="page-section" id="contact">
-            <div id="formContainer" class="container">
+			<div id="formContainerContainer">
+				<div id="formContainer" class="container">
                 <div class="text-center">
-                    <h2 class="section-heading text-uppercase">Contact Us</h2>
+                    <h2 class="section-heading text-uppercase" id="contactHeading">Contact Us</h2>
                     <!-- <h3 class="section-subheading text-muted">and I'll respond shortly!</h3> -->
                 </div>
 				<!-- <form method="POST" action="https://script.google.com/macros/s/AKfycbybf4JjHGl9qqYmTe836pwGEYlzdCjfqp0KzUFj7rLGw-ZGRYSAnQlAPr6MOYGOTO2_Pw/exec"> -->
@@ -381,11 +382,19 @@
 
                     <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
                     <!-- <div class="text-center"><button class="btn btn-primary btn-xl text-uppercase disabled" id="submitButton" type="submit">Send Message</button></div> -->
-                    <div class="text-center"><button class="btn btn-primary btn-xl text-uppercase" id="submitButton" type="submit">Send Message</button></div>
+                    <div class="text-center">
+						<button class="btn btn-primary btn-xl text-uppercase" id="submitButton" type="submit">Send Message</button>
+					</div>
+
+                    <div class="text-center" id="submitLoadingGif" style="display:none;">
+						<img src="assets/img/loading-1.gif" alt="loading icon" style="width:48px;height:48px;position:absolute;margin-left:-24px;margin-top:15px;">
+					</div>
+
                 </form>
             </div>	
+			</div>
 			<div id="formSuccessMessage" class="text-center" style="display:none;">
-				<h2 class="section-heading text-uppercase">Information Submitted</h2>
+				<!-- <h2 class="section-heading text-uppercase">Information Submitted</h2> -->
 				<h3 class="section-subheading text-muted" style="color:#cca000 !important;font-size:2rem;">I'll be keeping in touch!</h3>
 			</div>
         </section>
