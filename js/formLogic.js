@@ -4,6 +4,15 @@ form.addEventListener("submit", function(e) {
 		e.preventDefault();
 		const data = new FormData(form);
 		const action = e.target.action;
+		
+		//do form validation here
+		if(verifyForm()){
+			//if all good, do the rest below
+		}
+		else{
+			//insert error handling
+		}
+		
 		$("#submitLoadingGif").show();
 		fetch(action, {
 			method: 'POST',
@@ -19,7 +28,8 @@ form.addEventListener("submit", function(e) {
 //most of below is new logic to verify that a name + email + message are valid before submitting the contact form
 //on typing in the message textbox, call verifyForm(); if it returns true, call toggleSubmitButton(true)
 function verifyForm(){
-	return (verifyName() && verifyEmail() && verifyMessage());
+	// return (verifyName() && verifyEmail() && verifyMessage());
+	return true;
 }
 
 function verifyName(){
