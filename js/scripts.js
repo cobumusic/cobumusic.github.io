@@ -9,9 +9,6 @@
 
 
 //to make an element fade in on scroll, add class toFadeIn
-//TODO get rid of bug where scrolling fast enough makes the element flash as visible (fix by setting original opacity of elements to 0 anyway)
-//TODO add fade in to remainder of sections, and subsections
-//TODO make experience list fade in from the left/right sides
 const myElements = document.querySelectorAll(".toFadeInBottom, .toFadeInLeft, .toFadeInRight");
 const observerOptions = {
     threshold: 1.0
