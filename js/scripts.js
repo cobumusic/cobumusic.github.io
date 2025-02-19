@@ -12,15 +12,21 @@
 //TODO get rid of bug where scrolling fast enough makes the element flash as visible (fix by setting original opacity of elements to 0 anyway)
 //TODO add fade in to remainder of sections, and subsections
 //TODO make experience list fade in from the left/right sides
-const myElements = document.querySelectorAll(".toFadeIn");
+const myElements = document.querySelectorAll(".toFadeInBottom, .toFadeInLeft, .toFadeInRight");
+const observerOptions = {
+    threshold: 1.0
+};
 const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
-        if(entry.isIntersecting && !(entry.target.classList.contains("fadeInBottom"))){
-            console.log(entry.target.classList.contains("toFadeIn"));
+        if(entry.isIntersecting && entry.target.classList.contains("toFadeInBottom") && !(entry.target.classList.contains("fadeInBottom"))){
             entry.target.classList.add("fadeInBottom");
+        } else if(entry.isIntersecting && entry.target.classList.contains("toFadeInLeft") && !(entry.target.classList.contains("fadeInLeft"))){
+            entry.target.classList.add("fadeInLeft");
+        } else if(entry.isIntersecting && entry.target.classList.contains("toFadeInRight") && !(entry.target.classList.contains("fadeInRight"))){
+            entry.target.classList.add("fadeInRight");
         }
-    })
-})
+    }, observerOptions);
+});
 
 myElements.forEach(element => {
     observer.observe(element);
@@ -28,7 +34,7 @@ myElements.forEach(element => {
 
 
 
-//below came with the bootstrap code
+//everything below came with the bootstrap code
 window.addEventListener('DOMContentLoaded', event => {
 
     // Navbar shrink function
