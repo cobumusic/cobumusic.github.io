@@ -7,6 +7,28 @@
 // Scripts
 // 
 
+
+//to make an element fade in on scroll, add class toFadeIn
+//TODO get rid of bug where scrolling fast enough makes the element flash as visible (fix by setting original opacity of elements to 0 anyway)
+//TODO add fade in to remainder of sections, and subsections
+//TODO make experience list fade in from the left/right sides
+const myElements = document.querySelectorAll(".toFadeIn");
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if(entry.isIntersecting && !(entry.target.classList.contains("fadeInBottom"))){
+            console.log(entry.target.classList.contains("toFadeIn"));
+            entry.target.classList.add("fadeInBottom");
+        }
+    })
+})
+
+myElements.forEach(element => {
+    observer.observe(element);
+});
+
+
+
+//below came with the bootstrap code
 window.addEventListener('DOMContentLoaded', event => {
 
     // Navbar shrink function
